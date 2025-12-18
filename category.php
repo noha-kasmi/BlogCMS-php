@@ -1,5 +1,4 @@
 <?php
-// Connexion à la base
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -10,7 +9,6 @@ if ($conn->connect_error) {
     die("Connexion échouée : " . $conn->connect_error);
 }
 
-// Récupérer toutes les catégories
 $sql = "SELECT * FROM categorie ORDER BY nom_categorie ASC";
 $result = $conn->query($sql);
 ?>
@@ -28,7 +26,6 @@ $result = $conn->query($sql);
 
 <div id="top" class="s-wrap site-wrapper">
 
-    <!-- HEADER -->
     <header class="s-header">
         <div class="header__top">
             <div class="header__logo">
@@ -48,7 +45,6 @@ $result = $conn->query($sql);
         </nav>
     </header>
 
-    <!-- CONTENT -->
     <div class="s-content">
         <header class="listing-header">
             <h1 class="h2">Toutes les catégories</h1>
@@ -61,7 +57,6 @@ $result = $conn->query($sql);
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        // Image par défaut si aucune image n'est définie
                         $image = !empty($row['image']) 
                             ? 'uploads/' . $row['image'] 
                             : 'images/wheel-2000.jpg';
@@ -92,19 +87,25 @@ $result = $conn->query($sql);
                 $conn->close();
                 ?>
 
-            </div> <!-- end masonry -->
-        </div> <!-- end masonry-wrap -->
-    </div> <!-- end s-content -->
+            </div> 
+        </div> 
+    </div> 
 
-    <!-- FOOTER -->
-    <footer class="s-footer">
-        <div class="footer__copyright">
-            <span>© Copyright Typerite 2019</span>
-            <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
-        </div>
-    </footer>
+    <footer class="s-footer footer">
+            <div class="row">
+                <div class="column large-full footer__content">
+                    <div class="footer__copyright">
+                        <span>© Copyright Typerite 2019</span> 
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    </div>
+                </div>
+            </div>
 
-</div> <!-- end s-wrap -->
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"></a>
+            </div>
+        </footer>
+</div> 
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/plugins.js"></script>

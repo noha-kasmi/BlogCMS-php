@@ -4,13 +4,11 @@ $username = "root";
 $password = "";
 $dbname = "blogcms";
 
-// Connexion à la base
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connexion échouée : " . $conn->connect_error);
 }
 
-// Récupérer les articles
 $sql = "SELECT * FROM article ORDER BY date_cre_article DESC";
 $result = $conn->query($sql);
 ?>
@@ -50,9 +48,8 @@ $result = $conn->query($sql);
         
                     <a href="#0" title="Close Search" class="header__search-close">Close</a>
         
-                </div>  <!-- end header__search -->
+                </div>  
 
-                <!-- toggles -->
                 <a href="#0" class="header__search-trigger"></a>
                 <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
 
@@ -67,7 +64,7 @@ $result = $conn->query($sql);
                 <li><a href="page-contact.php">Contact</a></li>
                 <li><a href="dashboard.php">Dashboard</a></li>
             </ul>
-                </ul> <!-- end header__nav -->
+                </ul>
 
                 <ul class="header__social">
                     <li class="ss-facebook">
@@ -92,9 +89,9 @@ $result = $conn->query($sql);
                     </li>
                 </ul>
 
-            </nav> <!-- end header__nav-wrap -->
+            </nav> 
 
-        </header> <!-- end s-header -->
+        </header>
     </header>
 
     <div class="s-content">
@@ -150,15 +147,26 @@ $result = $conn->query($sql);
                 $conn->close();
                 ?>
 
-            </div> <!-- end masonry -->
-        </div> <!-- end masonry-wrap -->
+            </div> 
+        </div> 
 
-    </div> <!-- end s-content -->
+    </div>
 
-    <footer class="s-footer">
-        <!-- Footer ici, reste inchangé -->
-    </footer>
-</div> <!-- end s-wrap -->
+    <footer class="s-footer footer">
+            <div class="row">
+                <div class="column large-full footer__content">
+                    <div class="footer__copyright">
+                        <span>© Copyright Typerite 2019</span> 
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"></a>
+            </div>
+        </footer>
+</div> 
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/plugins.js"></script>

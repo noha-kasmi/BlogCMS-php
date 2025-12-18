@@ -56,7 +56,6 @@ if (isset($_POST['submit'])) {
     <title>Création Utilisateur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
@@ -66,7 +65,6 @@ if (isset($_POST['submit'])) {
 
 <div class="s-wrap site-wrapper">
 
-    <!-- HEADER -->
     <header class="s-header header">
         <nav class="header__nav-wrap">
             <ul class="header__nav">
@@ -79,7 +77,6 @@ if (isset($_POST['submit'])) {
         </nav>
     </header>
 
-    <!-- CONTENT -->
     <div class="s-content content">
         <main class="row content__page">
 
@@ -87,7 +84,6 @@ if (isset($_POST['submit'])) {
 
                 <h1 class="display-1">Créer un Compte</h1>
 
-                <!-- MESSAGE PHP -->
                 <?php if ($msg) echo $msg; ?>
 
                 <form method="post" autocomplete="off">
@@ -128,14 +124,20 @@ if (isset($_POST['submit'])) {
         </main>
     </div>
 
-    <!-- FOOTER -->
     <footer class="s-footer footer">
-        <div class="row">
-            <div class="column large-full footer__content">
-                © Typerite 2019
+            <div class="row">
+                <div class="column large-full footer__content">
+                    <div class="footer__copyright">
+                        <span>© Copyright Typerite 2019</span> 
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"></a>
+            </div>
+        </footer>
 
 </div>
 

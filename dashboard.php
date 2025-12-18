@@ -3,13 +3,11 @@ require_once __DIR__ . '/config/db.php';
 
 $page = $_GET['page'] ?? 'articles';
 
-/* ===== ARTICLES ===== */
 if ($page === 'articles') {
     $stmt = $pdo->query("SELECT * FROM article ORDER BY date_cre_article DESC");
     $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-/* ===== COMMENTS ===== */
 if ($page === 'commentaires') {
     $stmt = $pdo->query("
         SELECT commentaire.*, article.titre 
@@ -78,7 +76,6 @@ if ($page === 'commentaires') {
 
 <div id="top" class="s-wrap site-wrapper">
 
-<!-- ===== NAVBAR PRINCIPAL (KIF HOWA) ===== -->
 <header class="s-header header">
     <div class="header__top">
         <div class="header__logo">
@@ -99,7 +96,6 @@ if ($page === 'commentaires') {
     </nav>
 </header>
 
-<!-- ===== CONTENT ===== -->
 <div class="s-content content">
 <main class="row content__page">
 
@@ -107,17 +103,13 @@ if ($page === 'commentaires') {
 
 <h1 class="display-1">Dashboard Admin</h1>
 
-<!-- ===== DASHBOARD NAVBAR ===== -->
 <div class="dash-nav">
     <a href="dashboard.php?page=articles" class="<?= $page==='articles'?'active':'' ?>"> Articles</a>
     <a href="dashboard.php?page=commentaires" class="<?= $page==='commentaires'?'active':'' ?>"> Commentaires</a>
-    <a href="add_article.php"> Ajouter Article</a>
+    <a href="ajouter-article.php"> Ajouter Article</a>
 </div>
 
-<!-- ===== ARTICLES LIST ===== -->
 <?php if($page === 'articles'): ?>
-
-<!-- <a href="add_article.php" class="btn add"> Ajouter un article</a> -->
 
 <table>
 <tr>
